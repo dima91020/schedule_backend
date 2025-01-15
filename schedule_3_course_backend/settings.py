@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import mimetypes
+from django.conf import settings
+from django.conf.urls.static import static
 
 mimetypes.add_type("text/css", ".css", True)
 
@@ -22,6 +24,10 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware", # Here
     # ...
 ]
+
+urlpatterns = [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
