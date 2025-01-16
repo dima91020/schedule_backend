@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-(0*j@+(c4_4t^q0c$hpom(*lh-20^t48ek2u&1v*!p+z(c$dyo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['schedule-backend-d3zc.onrender.com', '127.0.0.1']
+ALLOWED_HOSTS = ['schedule-backend-d3zc.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
