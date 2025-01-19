@@ -1,9 +1,10 @@
 from django.contrib import admin
-from .models import Lesson
+from .models import Course, Semester, Week, Lesson
 
-class LessonAdmin(admin.ModelAdmin):
-    list_display = ('id', 'count', 'title', 'day', 'dayUkr', 'timeStart', 'zoomURL', 'teacher', 'typeLesson', 'isElective', 'usersId')
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
 
-# Register your models here.
-
-admin.site.register(Lesson, LessonAdmin)
+admin.site.register(Semester)
+admin.site.register(Week)
+admin.site.register(Lesson)
