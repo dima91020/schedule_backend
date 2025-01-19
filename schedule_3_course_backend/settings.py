@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 import mimetypes
 
 mimetypes.add_type("text/css", ".css", True)
@@ -98,6 +99,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DATABASES["default"] = dj_database_url.parse("postgresql://schedule_postgresql_user:KaeiDUxmLE5WuTY4RgxtAcCmNjoLWlOg@dpg-cu6fn2ij1k6c73f70m6g-a.frankfurt-postgres.render.com/schedule_postgresql")
 
 
 # Password validation

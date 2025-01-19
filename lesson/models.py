@@ -61,12 +61,12 @@ class Lesson(models.Model):
     day = models.CharField(
         max_length=10,
         choices=DAYS_OF_WEEK,
-        default=DAYS_OF_WEEK_UKR[0],
+        default=DAYS_OF_WEEK[0][0],
     )
     dayUkr = models.CharField(
         max_length=2,
         choices=DAYS_OF_WEEK_UKR,
-        default=DAYS_OF_WEEK_UKR[0],
+        default=DAYS_OF_WEEK_UKR[0][0],
     )
     timeStart = models.CharField(
         max_length=10,
