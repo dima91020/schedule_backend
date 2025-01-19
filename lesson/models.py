@@ -1,6 +1,32 @@
 from django.db import models
 
-# Create your models here.
+class Course(models.Model):
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+class Semester(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='semesters')
+    title = models.CharField(max_length=255)
+    order = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.course.title} - {self.title}"
+
+    class Meta:
+        ordering = ['order']
+
+class Week(models.Model):
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE, related_name='weeks')
+    title = models.CharField(max_length=255)
+    order = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.semester.title} - {self.title}"
+
+    class Meta:
+        ordering = ['order']
 
 class Lesson(models.Model):
     DAYS_OF_WEEK = [
@@ -30,25 +56,30 @@ class Lesson(models.Model):
         ('18-30', '18-30'),
     ]
 
-    count = models.PositiveIntegerField()
+    count = models.PositiveIntegerField(blank=True, default=0)
     title = models.CharField(max_length=200)
     day = models.CharField(
         max_length=10,
         choices=DAYS_OF_WEEK,
+        default=DAYS_OF_WEEK_UKR[0],
     )
     dayUkr = models.CharField(
         max_length=2,
         choices=DAYS_OF_WEEK_UKR,
+        default=DAYS_OF_WEEK_UKR[0],
     )
     timeStart = models.CharField(
         max_length=10,
         choices=TIME_FOR_LESSON,
+        default=TIME_FOR_LESSON[0][0],
     )
-    zoomURL = models.URLField(blank=True, null=True)
-    teacher = models.CharField(max_length=100)
-    typeLesson = models.CharField(max_length=100)
+    zoomURL = models.URLField(blank=True, null=True, default=None)
+    teacher = models.CharField(max_length=100, default=None)
+    typeLesson = models.CharField(max_length=100, default=None)
     isElective = models.BooleanField(default=False)
-    usersId = models.JSONField()
+    usersId = models.JSONField(default=None)
+
+    week = models.ForeignKey(Week, on_delete=models.CASCADE, related_name='lessons', null=True, blank=True)
 
     def __str__(self):
         return f"{self.title}, ({self.dayUkr}), ({self.timeStart})"
