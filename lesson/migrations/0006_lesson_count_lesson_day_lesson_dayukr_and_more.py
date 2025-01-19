@@ -18,12 +18,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='lesson',
             name='day',
-            field=models.CharField(choices=[('Mon', 'Monday'), ('Tues', 'Tuesday'), ('Wed', 'Wednesday'), ('Thurs', 'Thursday'), ('Fri', 'Friday'), ('Sat', 'Saturday')], default=('пн', 'Понеділок'), max_length=10),
+            field=models.CharField(choices=[('Mon', 'Monday'), ('Tues', 'Tuesday'), ('Wed', 'Wednesday'), ('Thurs', 'Thursday'), ('Fri', 'Friday'), ('Sat', 'Saturday')], default=('Mon', 'Monday'), max_length=1000),
         ),
         migrations.AddField(
             model_name='lesson',
             name='dayUkr',
-            field=models.CharField(choices=[('пн', 'Понеділок'), ('вт', 'Вівторок'), ('ср', 'Середа'), ('чт', 'Четвер'), ('пт', "П'ятниця"), ('сб', 'Субота')], default=('пн', 'Понеділок'), max_length=2),
+            field=models.CharField(choices=[('пн', 'Понеділок'), ('вт', 'Вівторок'), ('ср', 'Середа'), ('чт', 'Четвер'), ('пт', "П'ятниця"), ('сб', 'Субота')], default=('пн', 'Понеділок'), max_length=1000),
         ),
         migrations.AddField(
             model_name='lesson',
@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='lesson',
             name='timeStart',
-            field=models.CharField(choices=[('8-30', '8-30'), ('10-25', '10-25'), ('12-20', '12-20'), ('14-15', '14-15'), ('16-10', '16-10'), ('18-30', '18-30')], default='8-30', max_length=10),
+            field=models.CharField(choices=[('8-30', '8-30'), ('10-25', '10-25'), ('12-20', '12-20'), ('14-15', '14-15'), ('16-10', '16-10'), ('18-30', '18-30')], default='8-30', max_length=1000),
         ),
         migrations.AddField(
             model_name='lesson',
