@@ -77,9 +77,15 @@ class Lesson(models.Model):
     teacher = models.CharField(max_length=100, default=None)
     typeLesson = models.CharField(max_length=100, default=None)
     isElective = models.BooleanField(default=False)
-    usersId = models.JSONField(default=None)
+    usersId = models.JSONField(default=None, null=True, blank=True)
 
     week = models.ForeignKey(Week, on_delete=models.CASCADE, related_name='lessons', null=True, blank=True)
 
     def __str__(self):
         return f"{self.title}, ({self.dayUkr}), ({self.timeStart})"
+
+    def save(self, *args, **kwargs):
+        if not self.isElective and self.usersId is None:  # Змінена умова
+            self.usersId = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+
+        super().save(*args, **kwargs)
