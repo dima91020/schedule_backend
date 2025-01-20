@@ -67,6 +67,8 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
+    'https://rozklad3coursetest.netlify.app'
+    'https://rozklad3course.netlify.app/'
 ]
 
 ROOT_URLCONF = 'schedule_3_course_backend.urls'
