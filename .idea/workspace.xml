@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b22eea0-692d-4914-b4c5-5c62faadee85" name="Changes" comment="" />
+    <list default="true" id="7b22eea0-692d-4914-b4c5-5c62faadee85" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule_3_course_backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/schedule_3_course_backend/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -93,7 +102,13 @@
       <workItem from="1737241279202" duration="7340000" />
       <workItem from="1737278402958" duration="13544000" />
       <workItem from="1737309788486" duration="621000" />
-      <workItem from="1737356858546" duration="16529000" />
+      <workItem from="1737356858546" duration="17910000" />
+      <workItem from="1737553741505" duration="737000" />
+      <workItem from="1737567940489" duration="3061000" />
+      <workItem from="1737638548768" duration="4214000" />
+      <workItem from="1737718298656" duration="6067000" />
+      <workItem from="1737911400124" duration="8790000" />
+      <workItem from="1737984680955" duration="2566000" />
     </task>
     <servers />
   </component>

@@ -18,12 +18,11 @@ router.register(r'semesters', views.SemesterViewSet)
 router.register(r'weeks', views.WeekViewSet)
 router.register(r'lessons', views.LessonViewSet)
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/data-changed/', views.data_changed_check, name='data-changed-check'), # Ось що ми змінили
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

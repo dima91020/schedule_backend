@@ -1,8 +1,12 @@
+# lesson/views.py
 from rest_framework import viewsets
 from .models import Course, Semester, Week, Lesson
 from .serializers import CourseSerializer, SemesterSerializer, WeekSerializer, LessonSerializer
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
+from django.http import JsonResponse
+from django.utils import timezone
+from .signals import get_last_change_timestamp
 
 
 class CourseViewSet(viewsets.ReadOnlyModelViewSet):
@@ -26,6 +30,7 @@ class SemesterViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Semester.objects.all()
     serializer_class = SemesterSerializer
 
+
 class WeekViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Week.objects.all()
     serializer_class = WeekSerializer
@@ -34,3 +39,9 @@ class WeekViewSet(viewsets.ReadOnlyModelViewSet):
 class LessonViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
+
+
+@api_view(['GET'])
+def data_changed_check(request):
+    from .signals import get_last_change_timestamp
+    return JsonResponse({'changed': True , 'last_change': str(get_last_change_timestamp())})
