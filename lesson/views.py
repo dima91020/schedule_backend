@@ -19,7 +19,7 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
             course = self.get_object()
             semester = course.semesters.get(title__iexact=semester_title.replace('-', ' '))
             week = semester.weeks.get(title__iexact=week_title.replace('-', ' '))
-            lessons = week.lessons.all()
+            lessons = week.lessons.all().order_by('id')
             serializer = LessonSerializer(lessons, many=True)
             return Response(serializer.data)
         except (Course.DoesNotExist, Semester.DoesNotExist, Week.DoesNotExist):
@@ -37,7 +37,7 @@ class WeekViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class LessonViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Lesson.objects.all()
+    queryset = Lesson.objects.all().order_by('id')
     serializer_class = LessonSerializer
 
 
