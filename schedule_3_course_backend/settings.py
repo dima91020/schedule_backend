@@ -102,8 +102,9 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgresql://schedule_postgresql_user:KaeiDUxmLE5WuTY4RgxtAcCmNjoLWlOg@dpg-cu6fn2ij1k6c73f70m6g-a.frankfurt-postgres.render.com/schedule_postgresql")
-
+DATABASES["default"] = dj_database_url.parse("postgresql://postgres:EqCkNOpADzSQHOssaOSBXYmougHVjbNI@yamanote.proxy.rlwy.net:28255/railway")
+# postgresql://schedule_data_dmab_user:Ms697vjYn40Ioy7ZmdYDfS4zTY6LlNe2@dpg-cuqduu9u0jms738qbh10-a/schedule_data_dmab
+# postgresql://schedule_postgresql_user:KaeiDUxmLE5WuTY4RgxtAcCmNjoLWlOg@dpg-cu6fn2ij1k6c73f70m6g-a.frankfurt-postgres.render.com/schedule_postgresql
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
